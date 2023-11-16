@@ -1,6 +1,7 @@
 const express = require("express");
 require("dotenv").config();
 const mysql = require("mysql2");
+const cors = require("cors");
 const app = express();
 const port = 3005;
 const connection = mysql.createConnection(process.env.DATABASE_URL);
@@ -21,6 +22,8 @@ const connection = mysql.createConnection(process.env.DATABASE_URL);
 
 //   connection.end(); // Close the connection when done with database operations
 // });
+
+app.use(cors());
 
 app.get("/movies", function (request, respond) {
   connection.query("SELECT * FROM Movies", (error, results) => {
