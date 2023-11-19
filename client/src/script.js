@@ -10,7 +10,8 @@ async function getMoviesData(link) {
     title.textContent = obj.Title;
     description.textContent = `Year: ${obj.Year} 
       Genre: ${obj.Genre}
-      IMBD Rating: ${obj.Rating}`;
+      IMBD Rating: ${obj.Rating} 
+      `;
   });
 }
 getMoviesData("http://localhost:3005/movies");
