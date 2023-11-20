@@ -4,17 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:wght@300&family=Nanum+Gothic&display=swap" rel="stylesheet">
     <title>EmoCine</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <main>
-        <header>EmoCine</header>
-        <h1>How is youre Mood?</h1>
-        <form action="" method="post">
-            <label for="emojis">Choose one emoji!</label>
-            <select name="emojis" id="emojis" size="9">
+        <header> EmoCine 🍿 </header>
+        <h1>How is your mood today?</h1>
+        <form id= "emojiForm" action="" method="post">
+            <label for="emojis">Choose an emoji! </label>
+            <select name="emojis" id="emojis">
                 <option value="joyful">😂</option>
                 <option value="happiness">😊</option>
                 <option value="admiration">😍</option>
@@ -26,8 +29,11 @@
                 <option value="frustration">😤</option>
                 <option value="shock">😱</option>
             </select>
-            <input type="submit" value="submit">
+            <br>
+            <input type="submit" value="Submit" id="submitBtn">
         </form>
+<!--We can add this text when we suggest movie: This movie perfectly matches your mood. -->
+
 
         <article>
             <img id="imgurl" src="" alt="">
