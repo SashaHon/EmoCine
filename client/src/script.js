@@ -40,5 +40,6 @@ function showMovieSuggestion(data) {
   const description = document.querySelector("#description");
 
   title.textContent = data[0].title; // assign movie's title to the title in the first object of the array;
+  description.textContent = data[0].year;
   //need more code and logic here;
 }
