@@ -4,17 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:wght@300&family=Nanum+Gothic&display=swap"
+        rel="stylesheet">
     <title>EmoCine</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <main>
-        <header>EmoCine</header>
-        <h1>How is your Mood?</h1>
-        <form id="form">
-            <label for="emotion">Choose one emoji!</label>
-            <select name="emotion" id="emotion" size="9">
+        <header> EmoCine 🍿 </header>
+        <h1>How is your mood today?</h1>
+        <form id="form" action="" method="post">
+            <label for="emotion">Choose an emoji! </label>
+            <select name="emotion" id="emotion">
                 <option value="joyful">😂</option>
                 <option value="happiness">😊</option>
                 <option value="admiration">😍</option>
@@ -26,10 +31,15 @@
                 <option value="frustration">😤</option>
                 <option value="shock">😱</option>
             </select>
-            <input type="submit" value="submit">
+            <br>
+            <input type="submit" value="submit" id="submitBtn">
         </form>
+        <!--We can add this text when we suggest movie: This movie perfectly matches your mood. -->
+        <ul id="movieList"></ul>
 
-        <article>
+
+        <!-- we don't need the commented code bellow but by some reason iframe bellow works, but from our JS Iframe does not work :D -->
+        <!-- <article>
             <img id="imgurl" src="" alt="">
             <iframe id="trailer" width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
             </iframe>
@@ -41,7 +51,7 @@
                 <li id="rating"></li>
                 <li id="imdblink"></li>
             </ul>
-        </article>
+        </article> -->
     </main>
     <footer>
         <p>Created by:</p>
