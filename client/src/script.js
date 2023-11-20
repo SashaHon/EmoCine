@@ -36,6 +36,9 @@ function parseFormData(formData) {
 
 function showMovieSuggestion(data) {
   const list = document.querySelector("#movieList");
+  if (list.childElementCount !== 0) {
+    list.innerHTML = "";
+  }
 
   data.map((obj) => {
     const listItem = document.createElement("li");
