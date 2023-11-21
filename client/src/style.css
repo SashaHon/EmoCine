@@ -3,20 +3,17 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 main {
-    max-width: 100%;
+    max-width: 600px;
     margin: 50px auto;
     text-align: center;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
 }
 
 header {
@@ -35,11 +32,7 @@ h1 {
 }
 
 form {
-    margin-bottom: 0px;
-}
-
-.container {
-    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 label {
@@ -56,9 +49,7 @@ select {
     border-radius: 5px;
     box-sizing: border-box;
     margin-bottom: 20px;
-
 }
-
 
 input[type="submit"] {
     background-color: #4CAF50;
@@ -92,23 +83,6 @@ ul {
 #title {
     margin-top: 10px;
     color: #a11c1c;
-
-}
-
-#description {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 10px;
-    margin-left: 50px;
-    text-align: center;
-    width: 100%;
-    color: rgb(0, 0, 0);
-
-}
-
-#description li {
-    margin-top: 5px;
-    color: #060606;
 
 }
 
