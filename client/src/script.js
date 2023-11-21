@@ -1,15 +1,20 @@
-const form = document.querySelector("#form");
-form.addEventListener("submit", handleSubmit);
+const emotions = document.querySelector("#emotionsList");
+const list = document.querySelector("#movieList");
+const clearBtn = document.querySelector(".clear_btn");
+emotions.addEventListener("click", handleClickEmotions);
+clearBtn.addEventListener("click", clearMovieList);
 
-async function handleSubmit(e) {
-  e.preventDefault();
+async function handleClickEmotions(e) {
+  const emotion = e.target.getAttribute("emotion");
+  const isActive = document.querySelector(".active");
+  isActive.removeAttribute("class");
 
-  const formData = new FormData(form);
+  e.target.classList.add("active");
 
   try {
     const response = await fetch("http://localhost:3005/movies-db", {
       method: "POST",
-      body: parseFormData(formData),
+      body: createBodyRequest(emotion),
       headers: {
         "Content-Type": "application/json",
       },
@@ -25,25 +30,28 @@ async function handleSubmit(e) {
   }
 }
 
-function parseFormData(formData) {
-  let obj = {};
-  for (let [key, value] of formData.entries()) {
-    obj[key] = value;
-  }
-
-  return JSON.stringify(obj);
+function createBodyRequest(value) {
+  return JSON.stringify({ emotion: value });
 }
 
+// function parseFormData(formData) {
+//   let obj = {};
+//   for (let [key, value] of formData.entries()) {
+//     obj[key] = value;
+//   }
+
+//   return JSON.stringify(obj);
+// }
+
 function showMovieSuggestion(data) {
-  const list = document.querySelector("#movieList");
+  // const list = document.querySelector("#movieList");
   if (list.childElementCount !== 0) {
-    list.innerHTML = "";
+    clearMovieList();
   }
 
   data.map((obj) => {
     const listItem = document.createElement("li");
     const embedLink = obj.trailerLink.replace(/watch\?v=/, "embed/");
-    console.log("here", embedLink);
 
     listItem.innerHTML = `
     <article>
@@ -63,4 +71,8 @@ function showMovieSuggestion(data) {
 
     list.append(listItem);
   });
+}
+
+function clearMovieList() {
+  list.innerHTML = "";
 }

@@ -17,41 +17,21 @@
     <main>
         <header> EmoCine 🍿 </header>
         <h1>How is your mood today?</h1>
-        <form id="form" action="" method="post">
-            <label for="emotion">Choose an emoji! </label>
-            <select name="emotion" id="emotion">
-                <option value="joyful">😂</option>
-                <option value="happiness">😊</option>
-                <option value="admiration">😍</option>
-                <option value="silly">🤪</option>
-                <option value="curiosity">🧐</option>
-                <option value="intellectual">🤓</option>
-                <option value="excitement">🥳</option>
-                <option value="sadness">😭</option>
-                <option value="frustration">😤</option>
-                <option value="shock">😱</option>
-            </select>
-            <br>
-            <input type="submit" value="submit" id="submitBtn">
-        </form>
-        <!--We can add this text when we suggest movie: This movie perfectly matches your mood. -->
+        <h2 for="emotion">Choose an emoji! </h2>
+        <ul id="emotionsList">
+            <li emotion="joyful">😂</li>
+            <li emotion="happiness">😊</li>
+            <li emotion="admiration">😍</li>
+            <li emotion="silly">🤪</li>
+            <li emotion="curiosity">🧐</div>
+            <li emotion="intellectual">🤓</li>
+            <li emotion="excitement">🥳</li>
+            <li emotion="sadness">😭</li>
+            <li emotion="frustration">😤</;>
+            <li emotion="shock">😱</li>
+        </ul>
+        <button class="clear_btn">Clear</button>
         <ul id="movieList"></ul>
-
-
-        <!-- we don't need the commented code bellow but by some reason iframe bellow works, but from our JS Iframe does not work :D -->
-        <!-- <article>
-            <img id="imgurl" src="" alt="">
-            <iframe id="trailer" width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-            </iframe>
-            <h2 id="title"></h2>
-            <ul id="description">
-                <li id="emotion"></li>
-                <li id="genre"></li>
-                <li id="year"></li>
-                <li id="rating"></li>
-                <li id="imdblink"></li>
-            </ul>
-        </article> -->
     </main>
     <footer>
         <p>Created by:</p>
