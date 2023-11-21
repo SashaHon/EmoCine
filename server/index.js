@@ -12,7 +12,6 @@ app.use(express.json()); // Parse JSON bodies
 
 app.post("/movies-db", (request, respond) => {
   const emotion = request.body.emotion;
-
   connection.query(
     `SELECT * FROM Movies WHERE emotion='${emotion}'`,
     (error, results) => {
