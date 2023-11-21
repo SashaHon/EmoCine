@@ -1,5 +1,8 @@
-const form = document.querySelector("#form");
-form.addEventListener("submit", handleSubmit);
+const emotions = document.querySelector("#emotionsList");
+const list = document.querySelector("#movieList");
+const clearBtn = document.querySelector(".clear_btn");
+emotions.addEventListener("click", handleClickEmotions);
+clearBtn.addEventListener("click", clearMovieList);
 
 const movieItem = document.querySelector("#movieItem");
 const prevButton = document.querySelector("#prevButton");
@@ -8,13 +11,22 @@ const nextButton = document.querySelector("#nextButton");
 let currentMovieIndex = 0;
 let moviesData = [];
 
-async function handleSubmit(e) {
-  e.preventDefault();
-  const formData = new FormData(form);
+async function handleClickEmotions(e) {
+  const emotion = e.target.getAttribute("emotion");
+
+  if (!e.target.matches("li")) {
+    return;
+  }
+
+  if (movieItem.children.length !== 0) {
+    removeClassActive();
+  }
+
+  e.target.classList.add("active");
   try {
     const response = await fetch("http://localhost:3005/movies-db", {
       method: "POST",
-      body: parseFormData(formData),
+      body: createBodyRequest(emotion),
       headers: {
         "Content-Type": "application/json",
       },
@@ -28,15 +40,9 @@ async function handleSubmit(e) {
     console.error("Error:", error);
   }
 }
-
-function parseFormData(formData) {
-  let obj = {};
-  for (let [key, value] of formData.entries()) {
-    obj[key] = value;
-  }
-  return JSON.stringify(obj);
+function createBodyRequest(value) {
+  return JSON.stringify({ emotion: value });
 }
-
 function showMovieSuggestion(index) {
   if (moviesData.length > 0) {
     const movie = moviesData[index];
@@ -77,7 +83,6 @@ function updateButtons() {
 }
 
 nextButton.addEventListener("click", showNextMovie);
-
 function showNextMovie() {
   if (currentMovieIndex < moviesData.length - 1) {
     currentMovieIndex++;
@@ -92,4 +97,18 @@ function showPreviousMovie() {
     currentMovieIndex--;
     showMovieSuggestion(currentMovieIndex);
   }
+}
+
+function removeClassActive() {
+  const isActive = document.querySelector(".active");
+  if (isActive) {
+    isActive.removeAttribute("class");
+  }
+}
+
+function clearMovieList() {
+  removeClassActive();
+  movieItem.innerHTML = "";
+  prevButton.style.display = "none";
+  nextButton.style.display = "none";
 }

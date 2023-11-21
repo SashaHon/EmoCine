@@ -2,50 +2,46 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:wght@300&family=Nanum+Gothic&display=swap"
-      rel="stylesheet">
-  <title>EmoCine</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:wght@300&family=Nanum+Gothic&display=swap"
+        rel="stylesheet">
+    <title>EmoCine</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <main>
-        <header> EmoCine 🍿 </header>
-        <h1>How is your mood today?</h1>
-        <form id= "form">
-            <label for="emotion">Choose an emoji! </label>
-            <select name="emotion" id="emotion">
-                <option value="joyful">😂</option>
-                <option value="happiness">😊</option>
-                <option value="admiration">😍</option>
-                <option value="silly">🤪</option>
-                <option value="curiosity">🧐</option>
-                <option value="intellectual">🤓</option>
-                <option value="excitement">🥳</option>
-                <option value="sadness">😭</option>
-                <option value="frustration">😤</option>
-                <option value="shock">😱</option>
-            </select>
-            <br>
-            <input type="submit" value="submit" id="submitBtn">
-        </form>
-        
-        
-
+        <header>
+            <h1> EmoCine 🍿 </h1>
+            <h2>How is your mood today?</h2>
+            <h3 for="emotion">Choose an emoji! </h3>
+            <ul id="emotionsList">
+                <li emotion="joyful">😂</li>
+                <li emotion="happiness">😊</li>
+                <li emotion="admiration">😍</li>
+                <li emotion="silly">🤪</li>
+                <li emotion="curiosity">🧐</div>
+                <li emotion="intellectual">🤓</li>
+                <li emotion="excitement">🥳</li>
+                <li emotion="sadness">😭</li>
+                <li emotion="frustration">😤</li>
+                <li emotion="shock">😱</li>
+            </ul>
+            <button class="clear_btn">Clear</button>
+        </header>
         <div id="movieContainer">
             <div id="movieList" class="carousel slide">
-              <div class="carousel-inner">
-                <div class="carousel-item" id="movieItem"></div>
-              </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item" id="movieItem"></div>
+                </div>
             </div>
             <button id="prevButton" class="carousel-control-prev" style="display: none;">Previous</button>
             <button id="nextButton" class="carousel-control-next" style="display: none;">Next</button>
-          </div>
+        </div>
 
     </main>
     <footer>
