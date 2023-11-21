@@ -4,20 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>EmoCine</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <main>
-        <header>EmoCine</header>
-        <h1>How is your Mood?</h1>
-        <form id="form">
-            <label for="emotion">Choose one emoji!</label>
-            <select name="emotion" id="emotion" size="9">
+        <header> EmoCine 🍿 </header>
+        <h1>How is your mood today?</h1>
+        <form id="form" action="" method="post">
+            <label for="emotion">Choose an emoji! </label>
+            <select name="emotion" id="emotion">
                 <option value="joyful">😂</option>
                 <option value="happiness">😊</option>
                 <option value="admiration">😍</option>
@@ -29,67 +26,32 @@
                 <option value="frustration">😤</option>
                 <option value="shock">😱</option>
             </select>
-            <!-- <input type="text" name="username" placeholder="Enter your username"> -->
-            <input type="submit" value="submit">
+            <br>
+            <input type="submit" value="submit" id="submitBtn">
         </form>
-        <div id="test"></div>
 
-       <!--<div class="container">
-          <div id="myCarousel" class="carousel slide" data-ride="carousel">
-           
-            <ol class="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-        
-            
-            <div class="carousel-inner">
-        
-              <div class="item active">
-                <img src="la.jpg"  id="imgurl" alt="farnak" style="width:100%;">
-                <div class="carousel-caption">
-                  <iframe id="trailer" width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                  </iframe>
-                  <h2 id="title"></h2>
-                  <ul id="description">
-                    <li id="emotion"></li>
-                    <li id="genre"></li>
-                    <li id="year"></li>
-                    <li id="rating"></li>
-                    <li id="imdblink"></li>
-                </ul>
-                </div>
-              </div>
-        
-              
-              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-              </a>
-          </div>
-        </div> -->
-      
-        <!--<article>
-          <img id="imgurl" src="" alt="">
-          <iframe id="trailer" width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-          </iframe>
-          <h2 id="title"></h2>
-          <ul id="description">
-              <li id="emotion"></li>
-              <li id="genre"></li>
-              <li id="year"></li>
-              <li id="rating"></li>
-              <li id="imdblink"></li>
-          </ul>
-      </article>-->
-              
+        <article>
+            <img id="imgurl" src="" alt="">
+            <iframe id="trailer" width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+            </iframe>
+            <h2 id="title"></h2>
+            <ul id="description">
+                <li id="emotion"></li>
+                <li id="genre"></li>
+                <li id="year"></li>
+                <li id="rating"></li>
+                <li id="imdblink"></li>
+            </ul>
+        </article>
     </main>
-    <footer></footer>
+    <footer>
+        <p>Created by:</p>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/meleknur/">🩵 Meleknur Ozgu</a></li>
+            <li><a href="https://www.linkedin.com/in/oleksandra-honchar/">💛 Oleksandra Honchar</a></li>
+            <li><a href="https://www.linkedin.com/in/faranak-rahimi-6068a218a/">💜 Faranak Rahimi</a></li>
+        </ul>
+    </footer>
     <script src="script.js" type="module" defer></script>
 </body>
 

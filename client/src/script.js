@@ -15,8 +15,7 @@ async function handleSubmit(e) {
       throw new Error("Network response was not ok");
     }
     const moviesData = await response.json();
-    // console.log(moviesData);
-    showMovieSuggestion(moviesData); // main function where we assign movies data to the page elements;
+    showMovieSuggestion(moviesData);
   } catch (error) {
     console.error("Error:", error);
   }
@@ -29,50 +28,30 @@ function parseFormData(formData) {
   return JSON.stringify(obj);
 }
 function showMovieSuggestion(data) {
-  const title = document.querySelector("#title");
-  const test = document.querySelector("#test");
-  console.log(data);
- test.innerHTML=`<div class="container">
- <div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-     <li data-target="#myCarousel" data-slide-to="1"></li>
-     <li data-target="#myCarousel" data-slide-to="2"></li>
-   </ol>
+  const list = document.querySelector("#movieList");
+  if (list.childElementCount !== 0) {
+    list.innerHTML = "";
+  }
 
-   
-   <div class="carousel-inner">
+  data.map((obj) => {
+    const listItem = document.createElement("li");
 
-     <div class="item active">
-       <img src="la.jpg"  id="imgurl" alt="farnak" style="width:100%;">
-       <div class="carousel-caption">
-         <iframe id="trailer" width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-         </iframe>
-         <h2 id="title"></h2>
-         <ul id="description">
-           <li id="emotion">powercoders</li>
-           <li id="genre"></li>
-           <li id="year"></li>
-           <li id="rating"></li>
-           <li id="imdblink"></li>
-       </ul>
-       </div>
-     </div>
+    listItem.innerHTML = `
+    <article>
+      <h2 id="title">${obj.title}</h2>
+      <ul id="description">
+        <li id="year">Year: ${obj.year}</li>
+        <li id="genre">Genre: ${obj.genre}</li>
+        <li id="rating">IMDB Rating: ${obj.imdbRating}</li>
+        <li id="imdblink"><a href=${obj.imdbLink} target='_blank'>See more info at IMBD</a></li>
+      </ul>
+      <div id="wrapper">
+       <img src=${obj.imgurl} alt="${obj.title} poster">
+        <iframe id="trailer" width="420" height="345" src=${obj.trailerLink}></iframe>
+      </div>
+    </article >
+    `;
 
-    
-     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-       <span class="glyphicon glyphicon-chevron-left"></span>
-       <span class="sr-only">Previous</span>
-     </a>
-     <a class="right carousel-control" href="#myCarousel" data-slide="next">
-       <span class="glyphicon glyphicon-chevron-right"></span>
-       <span class="sr-only">Next</span>
-     </a>
- </div>
-</div>
-`
-
+    list.append(listItem);
+  });
 }
-
-
-
