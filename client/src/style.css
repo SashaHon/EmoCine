@@ -51,7 +51,6 @@ select {
     margin-bottom: 20px;
 }
 
-
 input[type="submit"] {
     background-color: #4CAF50;
     color: #fff;
@@ -68,6 +67,23 @@ input[type="submit"]:hover {
 
 ul {
     list-style: none;
+}
+
+#trailer {
+    margin-top: 20px;
+    border-radius: 10px;
+
+
+}
+
+#poster {
+    height: 350px;
+}
+
+#title {
+    margin-top: 10px;
+    color: #a11c1c;
+
 }
 
 footer {

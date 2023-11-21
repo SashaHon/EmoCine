@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:wght@300&family=Nanum+Gothic&display=swap"
-        rel="stylesheet">
-    <title>EmoCine</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:wght@300&family=Nanum+Gothic&display=swap"
+      rel="stylesheet">
+  <title>EmoCine</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -34,24 +34,10 @@
             <br>
             <input type="submit" value="submit" id="submitBtn">
         </form>
-        <!--We can add this text when we suggest movie: This movie perfectly matches your mood. -->
-        <ul id="movieList"></ul>
-
-
-        <!-- we don't need the commented code bellow but by some reason iframe bellow works, but from our JS Iframe does not work :D -->
-        <!-- <article>
-            <img id="imgurl" src="" alt="">
-            <iframe id="trailer" width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-            </iframe>
-            <h2 id="title"></h2>
-            <ul id="description">
-                <li id="emotion"></li>
-                <li id="genre"></li>
-                <li id="year"></li>
-                <li id="rating"></li>
-                <li id="imdblink"></li>
-            </ul>
-        </article> -->
+        
+        <div id="movieCarousel" class="carousel slide" data-ride="carousel">
+          <ul id="movieList"></ul>
+        </div>
     </main>
     <footer>
         <p>Created by:</p>
