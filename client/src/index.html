@@ -35,9 +35,18 @@
             <input type="submit" value="submit" id="submitBtn">
         </form>
         
-        <div id="movieCarousel" class="carousel slide" data-ride="carousel">
-          <ul id="movieList"></ul>
-        </div>
+        
+
+        <div id="movieContainer">
+            <div id="movieList" class="carousel slide">
+              <div class="carousel-inner">
+                <div class="carousel-item" id="movieItem"></div>
+              </div>
+            </div>
+            <button id="prevButton" class="carousel-control-prev" style="display: none;">Previous</button>
+            <button id="nextButton" class="carousel-control-next" style="display: none;">Next</button>
+          </div>
+
     </main>
     <footer>
         <p>Created by:</p>
