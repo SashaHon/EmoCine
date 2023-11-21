@@ -42,6 +42,8 @@ function showMovieSuggestion(data) {
 
   data.map((obj) => {
     const listItem = document.createElement("li");
+    const embedLink = obj.trailerLink.replace(/watch\?v=/, "embed/");
+    console.log("here", embedLink);
 
     listItem.innerHTML = `
     <article>
@@ -50,11 +52,11 @@ function showMovieSuggestion(data) {
         <li id="year">Year: ${obj.year}</li>
         <li id="genre">Genre: ${obj.genre}</li>
         <li id="rating">IMDB Rating: ${obj.imdbRating}</li>
-        <li id="imdblink"><a href=${obj.imdbLink} target='_blank'>See more info at IMBD</a></li>
+        <li id="imdblink"><a href=${obj.imdbLink} target='_blank'>See more info at IMDB</a></li>
       </ul>
       <div id="wrapper">
-       <img src=${obj.imgurl} alt="${obj.title} poster">
-        <iframe id="trailer" width="420" height="345" src=${obj.trailerLink}></iframe>
+       <img src=${obj.imgUrl} alt="${obj.title} poster">
+        <iframe id="trailer" width="420" height="345" src=${embedLink} title="video"></iframe>
       </div>
     </article >
     `;
