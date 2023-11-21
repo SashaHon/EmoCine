@@ -34,7 +34,8 @@ function showMovieSuggestion(data) {
   }
 
   data.map((obj) => {
-    const listItem = document.createElement("li");
+    
+  const listItem = document.createElement("li");
 
     listItem.innerHTML = `
     <article>
@@ -46,7 +47,7 @@ function showMovieSuggestion(data) {
         <li id="imdblink"><a href=${obj.imdbLink} target='_blank'>See more info at IMBD</a></li>
       </ul>
       <div id="wrapper">
-       <img src=${obj.imgurl} alt="${obj.title} poster">
+       <img src=${obj.imgUrl} alt="${obj.title} poster">
         <iframe id="trailer" width="420" height="345" src=${obj.trailerLink}></iframe>
       </div>
     </article >
@@ -55,3 +56,4 @@ function showMovieSuggestion(data) {
     list.append(listItem);
   });
 }
+
