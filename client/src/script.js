@@ -19,8 +19,7 @@ async function handleSubmit(e) {
       throw new Error("Network response was not ok");
     }
     const moviesData = await response.json();
-    // console.log(moviesData);
-    showMovieSuggestion(moviesData); // main function where we assign movies data to the page elements;
+    showMovieSuggestion(moviesData);
   } catch (error) {
     console.error("Error:", error);
   }
@@ -36,9 +35,32 @@ function parseFormData(formData) {
 }
 
 function showMovieSuggestion(data) {
-  const title = document.querySelector("#title");
-  const description = document.querySelector("#description");
+  const list = document.querySelector("#movieList");
+  if (list.childElementCount !== 0) {
+    list.innerHTML = "";
+  }
 
-  title.textContent = data[0].title; // assign movie's title to the title in the first object of the array;
-  //need more code and logic here;
+  data.map((obj) => {
+    const listItem = document.createElement("li");
+    const embedLink = obj.trailerLink.replace(/watch\?v=/, "embed/");
+    console.log("here", embedLink);
+
+    listItem.innerHTML = `
+    <article>
+      <h2 id="title">${obj.title}</h2>
+      <ul id="description">
+        <li id="year">Year: ${obj.year}</li>
+        <li id="genre">Genre: ${obj.genre}</li>
+        <li id="rating">IMDB Rating: ${obj.imdbRating}</li>
+        <li id="imdblink"><a href=${obj.imdbLink} target='_blank'>See more info at IMDB</a></li>
+      </ul>
+      <div id="wrapper">
+       <img src=${obj.imgUrl} alt="${obj.title} poster">
+        <iframe id="trailer" width="420" height="345" src=${embedLink} title="video"></iframe>
+      </div>
+    </article >
+    `;
+
+    list.append(listItem);
+  });
 }
