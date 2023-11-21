@@ -1,7 +1,9 @@
 const form = document.querySelector("#form");
 form.addEventListener("submit", handleSubmit);
+
 async function handleSubmit(e) {
   e.preventDefault();
+
   const formData = new FormData(form);
   try {
     const response = await fetch("http://localhost:3005/movies-db", {
