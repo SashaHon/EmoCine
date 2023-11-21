@@ -16,7 +16,7 @@ main {
     border-radius: 10px;
 }
 
-header {
+h1 {
     font-size: 42px;
     font-weight: bold;
     margin: 40px auto;
@@ -24,7 +24,7 @@ header {
     background-color: #5cae5ec4;
 }
 
-h1 {
+h2 {
     font-size: 34px;
     margin-bottom: 20px auto;
     font-family: 'Indie Flower', cursive;
@@ -91,6 +91,21 @@ input[type="submit"]:hover {
 
 ul {
     list-style: none;
+}
+
+#trailer {
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#poster {
+    height: 350px;
+}
+
+#title {
+    margin-top: 10px;
+    color: #a11c1c;
+
 }
 
 footer {
