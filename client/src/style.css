@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #fff;
     color: #333;
     font-family: 'Montserrat', sans-serif;
 }
@@ -11,7 +11,7 @@ main {
     margin: 0 auto;
     text-align: center;
     padding: 2rem 10rem;
-    background-color: #fff;
+    background-color: #f4f4f4;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
@@ -22,6 +22,8 @@ h1 {
     margin: 40px auto;
     color: #f5f0f0;
     background-color: #5cae5ec4;
+    border-radius: 1rem;
+    padding: 1rem;
 }
 
 h2 {
@@ -107,8 +109,9 @@ ul {
     border: 1px solid lightgray;
 }
 
-#messagetext{
+#messagetext {
     font-size: 25px;
+
 }
 
 #title {
@@ -119,40 +122,60 @@ ul {
 
 #description {
     color: #020e02c4;
-    padding: 10px; 
+    padding: 10px;
     font-size: 18px;
-  }
-  
-  #description li {
-    list-style-type: none; 
-    margin-bottom: 5px; 
-  }
+    padding: 0;
+    margin: 0;
 
-  #movieContainer{
+}
+
+#description li {
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+#movieContainer {
     margin-bottom: 50px;
-  }
+}
+
+#year,
+#genre,
+#rating,
+#imdblink {
+    font-weight: bold;
+}
+
+#imdblink a {
+    text-decoration: none;
+    color: #020e02c4;
+    transition: color 0.3s ease;
+}
+
+#imdblink a:hover {
+    color: #2980b9;
+}
 
 
-  .carousel-control-prev,
+.carousel-control-prev,
 .carousel-control-next {
-  background-color: #af514c;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 10px; 
-  text-decoration: none; 
-  display: inline-block; 
+    background-color: #5cae5ec4;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-  background-color: #b9918e;
+    background-color: #b0d7b0;
 }
 
-  
+
 footer {
     padding: 2rem 20rem;
 }
